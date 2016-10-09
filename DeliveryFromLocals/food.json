@@ -1,0 +1,82 @@
+{
+    "cities": {
+        "ru-moscow": {
+            "food": {
+                "ru-moscow-doner": {
+                    "foodname": "Doner",
+                    "price": 250.0,
+                    "description": "Meat and meat",
+                    "image": ""
+                }
+            },
+            "cityname": "SPb",
+            "description": "Moscow is pretty big.",
+            "image": "https://en.wikipedia.org/wiki/Moscow#/media/File:0_4707b_6549aa91_spasskaya.jpg"
+        },
+        "ru-spb": {
+            "food": {
+                "ru-spb-pancake": {
+                    "foodname": "Pancake",
+                    "price": 60.0,
+                    "description": "Pancake",
+                    "image": "http://cookingtheglobe.com/wp-content/uploads/2016/05/russian-pancakes-blini.jpg"
+                }
+            },
+            "cityname": "Saint Petersburg",
+            "description": "Saint Petersburg is the most beautiful city of the world",
+            "image": "https://en.wikipedia.org/wiki/Saint_Petersburg#/media/File:Saint_Isaac%27s_Square_SPB_(01).jpg"
+        },
+        "fr-paris": {
+            "food": {
+                "fr-paris-confit": {
+                    "foodname": "Confit de canard",
+                    "price": 550.0,
+                    "description": "Ножка, запеченная в собственном жире на сковородке на открытом огне, и подаваемую с картошкой,также приготовленной в утином жире",
+                    "image": "http://www.gastrotur.ru/wp-content/uploads/2014/02/Magret-de-canard.jpg"
+                }
+            },
+            "cityname": "Paris",
+            "description": "Paris is the most romantic city of the world",
+            "image": "https://en.wikipedia.org/wiki/Paris#/media/File:Construction_tour_eiffel5.JPG"
+        },
+        "is-barcelona": {
+            "food": {
+                "is-barcelona-churros": {
+                    "foodname": "Churros con chocolate",
+                    "price": 300.5,
+                    "description": "Чашка с темным и роскошным горячим шоколадом, сопровождающаяся тарелкой с хрустящим, жареным печеньем, которое нужно макать в шоколад",
+                    "image": "http://www.gastrotur.ru/wp-content/uploads/2014/02/CHurros-i-goryachiy-shokolad.jpg"
+                }
+            },
+            "cityname": "Barcelona",
+            "description": "Barcelona is the capital city of the autonomus community of Catalonia in the Kingdom of Spain",
+            "image": "https://en.wikipedia.org/wiki/Barcelona#/media/File:Barcelona_-_Pla%C3%A7a_Reial.jpg"
+        }
+        "be-brussels": {
+            "food": {
+                "be-brussels-gaufre": {
+                    "foodname": "Gaufre de Bruxelles",
+                    "price": 300.5,
+                    "description": "The yeast and the beaten egg whites which are folded into the batter work together to produce a light crisp waffle",
+                    "image": "http://www.europeancuisines.com/sites/default/files/styles/large/public/Belgian_Waffles_in_Brussels_Waffle_Shop_Window.jpg?itok=fV6-g3ey"
+                }
+            },
+            "cityname": "Brussels",
+            "description": "Brussels is the de facto capital of the European Union as it hosts a number of principal EU institutions",
+            "image": "https://en.wikipedia.org/wiki/Brussels#/media/File:Palace_of_Brussels.jpg"
+        }
+        "it-milan": {
+            "food": {
+                "it-milan-risotto": {
+                    "foodname": "Risotto alla milanese",
+                    "price": 300.5,
+                    "description": "This world-famous dish is a creamy mix of arborio rice, saffron, grated cheese, butter, white wine and chicken stock",
+                    "image": "https://www.walksofitaly.com/blog/wp-content/uploads/2013/05/risotto.jpg"
+                }
+            },
+            "cityname": "Milan",
+            "description": "Milan is the capital of the Lombardy region, and the most populous metropolitan area and the second most populous commune in Italy",
+            "image": "https://en.wikipedia.org/wiki/Milan#/media/File:Sforza_Castle_Milan_from_internal_Court_yard.JPG"
+        }
+    }
+}
