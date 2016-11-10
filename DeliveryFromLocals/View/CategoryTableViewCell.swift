@@ -42,7 +42,7 @@ class CategoryTableViewCell: UITableViewCell {
         self.foodNameLbl.text = food.foodName
         self.foodDescriptionLbl.text = food.foodDescription
         self.foodImageView.image = UIImage.init(named: food.foodImageLink ?? "defaultCity.png")
-        self.foodBuyBtn.setTitle("Buy \(food.foodPrice!)$", for: .normal)
+        self.foodBuyBtn.setTitle("Buy \(food.foodPrice!)₽", for: .normal)
         
         self.food = food
     }

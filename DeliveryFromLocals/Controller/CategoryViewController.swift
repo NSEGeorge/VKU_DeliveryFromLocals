@@ -8,22 +8,37 @@
 
 import UIKit
 
-class CategoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CategoryTableViewCellDelegate {
+class CategoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CategoryTableViewCellDelegate, UISearchBarDelegate, UISearchControllerDelegate {
     
     // MARK: Variables
     var food: [FoodModel]?
+    var searchFood: [FoodModel]?
+    var searchController: UISearchController?
     
     // MARK: IBOutlets
     @IBOutlet weak var tableView: UITableView!
     
+    func setupSearchController() -> Void {
+        self.searchController = UISearchController.init(searchResultsController: nil)
+        self.searchController?.delegate = self
+        self.searchController?.searchBar.delegate = self
+        
+        self.searchController?.hidesNavigationBarDuringPresentation = false
+        self.searchController?.obscuresBackgroundDuringPresentation = false
+        
+        self.navigationItem.titleView = self.searchController?.searchBar
+        
+        self.definesPresentationContext = true
+    }
+    
     // MARK: UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.food!.count
+        return self.searchFood!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryTableViewCell", for: indexPath) as! CategoryTableViewCell
-        cell.setupCellWithFood(food: food![indexPath.row])
+        cell.setupCellWithFood(food: searchFood![indexPath.row])
         cell.delegate = self
         return cell
     }
@@ -35,7 +50,6 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: "", sender: indexPath.row)
     }
     
     // MARK: CategoryTableViewCellDelegate
@@ -47,6 +61,21 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
         alert.addAction(alertAction)
         self.navigationController?.present(alert, animated: true, completion: nil)
     }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+//        let predicate = NSPredicate(format: "SELF.foodName contains[c] %@", searchBar.text!)
+//        self.searchFood = self.food?.filter{predicate.evaluate(with: $0)}
+        
+        self.searchFood = self.food?.filter{food in food.foodName == searchBar.text}
+        
+        tableView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.searchFood = self.food
+        tableView.reloadData()
+    }
 }
 
 extension CategoryViewController {
@@ -56,6 +85,9 @@ extension CategoryViewController {
         self.tableView.estimatedRowHeight = 44
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.register(UINib.init(nibName: "CategoryTableViewCell", bundle: nil), forCellReuseIdentifier: "CategoryTableViewCell")
+        
+        self.searchFood = self.food
+        setupSearchController()
     }
     
     override func didReceiveMemoryWarning() {

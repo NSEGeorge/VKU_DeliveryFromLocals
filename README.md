@@ -7,7 +7,7 @@ Cities
 
 Food List
 
-![Food List](Images/FoodList1.png)
+![Food List](Images/FoodList.png)
 
 Alert
 
