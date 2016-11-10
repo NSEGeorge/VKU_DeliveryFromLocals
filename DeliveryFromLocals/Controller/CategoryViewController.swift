@@ -64,11 +64,7 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
-//        let predicate = NSPredicate(format: "SELF.foodName contains[c] %@", searchBar.text!)
-//        self.searchFood = self.food?.filter{predicate.evaluate(with: $0)}
-        
-        self.searchFood = self.food?.filter{food in food.foodName == searchBar.text}
-        
+        self.searchFood = self.food?.filter{(($0.foodName?.range(of: searchBar.text!)) != nil)}
         tableView.reloadData()
     }
     
